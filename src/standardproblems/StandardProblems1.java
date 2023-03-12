@@ -12,8 +12,8 @@ import java.util.Scanner;
 import java.util.Set;
 import java.util.Stack;
 
-import standardproblems.StandardProblems.MapPair;
-import standardproblems.StandardProblems.RootPair;
+import standardproblems.StandardProblems1.MapPair;
+import standardproblems.StandardProblems1.RootPair;
 
 class SortByValue implements Comparator<MapPair> {
 
@@ -32,7 +32,7 @@ class SortBysquareofThatValue implements Comparator<RootPair> {
 
 }
 
-public class StandardProblems {
+public class StandardProblems1 {
 
 	public static void main(String[] args) {
 		// majorityElement();// appears more than arraysize/2 times
@@ -369,7 +369,7 @@ public class StandardProblems {
 		}
 
 		for (int i = 1; i < hashtable.length; i++) {
-			if (hashtable[i] == 1) {
+			if (hashtable[i] > 1) {
 				System.out.println(i);
 			}
 		}
