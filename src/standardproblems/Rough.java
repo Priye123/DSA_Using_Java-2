@@ -1,32 +1,37 @@
 package standardproblems;
 
-import java.util.HashSet;
-import java.util.LinkedHashMap;
-import java.util.Map;
-import java.util.Set;
+import java.util.Scanner;
 
 public class Rough {
 
 	public static void main(String[] args) {
-		Map<Integer,Set<Integer>> records=new LinkedHashMap<>();
+		Scanner sc = new Scanner(System.in);
+		String str = sc.next();
+		String t="";
+		for (int i = 0; i < str.length(); i++) {
+			for (int j = i + 1; j <= str.length(); j++) {
+				System.out.print(str.substring(i, j) + " ");
+				//System.out.println("------------------");
+				if(isPalindrome(str.substring(i, j))) {
+					if(t.length()<str.substring(i, j).length()) {
+						t=str.substring(i, j);
+					}
+				}
+			}
+		}
+		System.out.println("-----------------------");
+		System.out.println(t);
+	}
+
+	private static boolean isPalindrome(String str) {
 		
-		Set<Integer> set=new HashSet<>();
-		set.add(1);
-		set.add(2);
-		set.add(1);
-		//[1,2]
+		for(int i=0,j=str.length()-1;i<=j;i++,j--) {
+			if(str.charAt(i)!=str.charAt(j)) {
+				return false;
+			}
+		}
 		
-		records.put(100, set);//{100:[1,2]}
-		
-		Set<Integer> set1=new HashSet<>();
-		set1.add(5);
-		set1.add(5);
-		set1.add(6);
-		//[6,5]
-		
-		records.put(200, set1);//{100:[1,2],200:[6,5]}
-		
-		System.out.println(records);
+		return true;
 	}
 
 }
